@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://bio2rdf.org/geneid_vocabulary:"
+    xmlns:j.1="http://www.mydomain.org/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
+  <rdf:Description rdf:about="go:0006464">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular protein modification process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0071702">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic substance transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046907">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intracellular transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042953">
+    <rdfs:subClassOf>go:0044765</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0015031</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lipoprotein transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0008528">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G-protein coupled peptide receptor activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/geneid:157680">
+    <j.0:has_symbol>VPS13B</j.0:has_symbol>
+    <j.1:occurence>1</j.1:occurence>
+    <j.1:chrom>8</j.1:chrom>
+    <j.1:arm>8q</j.1:arm>
+    <j.1:region>8q2</j.1:region>
+    <j.1:band>8q22</j.1:band>
+    <j.1:subband>8q22.2</j.1:subband>
+    <j.0:process>http://bio2rdf.org/go:0015031</j.0:process>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0071545">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inositol phosphate catabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0007187">
+    <rdfs:subClassOf>go:0007186</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G-protein coupled receptor signaling pathway, coupled to cyclic nucleotide second messenger</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044439">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peroxisomal part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031907">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microbody lumen</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005788">
+    <rdfs:subClassOf>go:0070013</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044432</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endoplasmic reticulum lumen</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046983">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein dimerization activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046942">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carboxylic acid transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0008527">
+    <rdfs:subClassOf>go:0004930</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taste receptor activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0004252">
+    <rdfs:subClassOf>go:0004175</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0008236</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">serine-type endopeptidase activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0023061">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">signal release</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0022900">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electron transport chain</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0000302">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to reactive oxygen species</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0090276">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of peptide hormone secretion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0030804">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of cyclic nucleotide biosynthetic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005930">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">axoneme</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046030">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inositol trisphosphate phosphatase activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0050710">
+    <rdfs:subClassOf>go:0050707</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0050709</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of cytokine secretion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044424">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intracellular part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0097458">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuron part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0004439">
+    <rdfs:subClassOf>go:0034593</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0034595</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphatidylinositol-4,5-bisphosphate 5-phosphatase activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0036293">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to decreased oxygen levels</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0007186">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G-protein coupled receptor signaling pathway</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046982">
+    <rdfs:subClassOf>go:0046983</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein heterodimerization activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:1901700">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to oxygen-containing compound</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031667">
+    <rdfs:subClassOf>go:0009991</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to nutrient levels</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0010827">
+    <rdfs:subClassOf>go:0051049</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of glucose transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0045184">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">establishment of protein localization</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0060359">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to ammonium ion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0048856">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical structure development</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0008152">
+    <rdfs:subClassOf>go:0008150</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0015980">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">energy derivation by oxidation of organic compounds</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005504">
+    <rdfs:subClassOf>go:0033293</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0008289</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fatty acid binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006112">
+    <rdfs:subClassOf>go:0015980</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">energy reserve metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043043">
+    <rdfs:subClassOf>go:0043604</rdfs:subClassOf>
+    <rdfs:subClassOf>go:1901566</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0006518</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peptide biosynthetic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046854">
+    <rdfs:subClassOf>go:0046488</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0046834</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphatidylinositol phosphorylation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044421">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extracellular region part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043232">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intracellular non-membrane-bounded organelle</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0070996">
+    <rdfs:subClassOf>go:0031779</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type 1 melanocortin receptor binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006865">
+    <rdfs:subClassOf>go:0071705</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0046942</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amino acid transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/geneid:5122">
+    <j.0:process>http://bio2rdf.org/go:0043043</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0051384</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0030141</j.0:component>
+    <j.1:region>5q1</j.1:region>
+    <j.0:process>http://bio2rdf.org/go:0070555</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0043025</j.0:component>
+    <j.0:component>http://bio2rdf.org/go:0030425</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0031016</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0050714</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0032496</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0016540</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0006112</j.0:process>
+    <j.0:has_symbol>PCSK1</j.0:has_symbol>
+    <j.0:process>http://bio2rdf.org/go:0010157</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0030133</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0050796</j.0:process>
+    <j.1:chrom>5</j.1:chrom>
+    <j.0:process>http://bio2rdf.org/go:0043278</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0016486</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0070542</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0009749</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0005615</j.0:component>
+    <j.0:component>http://bio2rdf.org/go:0005791</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0034641</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0048471</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0043434</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0005802</j.0:component>
+    <j.1:band>5q21</j.1:band>
+    <j.0:process>http://bio2rdf.org/go:0022008</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0008152</j.0:process>
+    <j.1:occurence>2</j.1:occurence>
+    <j.0:function>http://bio2rdf.org/go:0051087</j.0:function>
+    <j.1:band>5q15</j.1:band>
+    <j.0:process>http://bio2rdf.org/go:0031667</j.0:process>
+    <j.0:function>http://bio2rdf.org/go:0004252</j.0:function>
+    <j.1:region>5q2</j.1:region>
+    <j.0:component>http://bio2rdf.org/go:0043679</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0044281</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0048678</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0006508</j.0:process>
+    <j.0:function>http://bio2rdf.org/go:0004175</j.0:function>
+    <j.0:process>http://bio2rdf.org/go:0021983</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0009790</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0005794</j.0:component>
+    <j.0:function>http://bio2rdf.org/go:0043559</j.0:function>
+    <j.0:process>http://bio2rdf.org/go:0007267</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0042493</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0051592</j.0:process>
+    <j.1:arm>5q</j.1:arm>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005515">
+    <rdfs:subClassOf>go:0005488</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0014072">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to isoquinoline alkaloid</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006811">
+    <rdfs:subClassOf>go:0044765</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ion transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/geneid:338557">
+    <j.1:occurence>1</j.1:occurence>
+    <j.0:process>http://bio2rdf.org/go:0050710</j.0:process>
+    <j.0:has_symbol>O3FAR1</j.0:has_symbol>
+    <j.1:region>10q2</j.1:region>
+    <j.1:band>10q23</j.1:band>
+    <j.1:arm>10q</j.1:arm>
+    <j.0:component>http://bio2rdf.org/go:0016021</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0010827</j.0:process>
+    <j.1:subband>10q23.3</j.1:subband>
+    <j.0:component>http://bio2rdf.org/go:0030139</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0050728</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0005886</j.0:component>
+    <j.0:function>http://bio2rdf.org/go:0008527</j.0:function>
+    <j.0:process>http://bio2rdf.org/go:0046879</j.0:process>
+    <j.0:function>http://bio2rdf.org/go:0005504</j.0:function>
+    <j.1:chrom>10</j.1:chrom>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042632">
+    <rdfs:subClassOf>go:0055092</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cholesterol homeostasis</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0017046">
+    <rdfs:subClassOf>go:0042562</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0042277</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peptide hormone binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0010157">
+    <rdfs:subClassOf>go:1901700</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0010035</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to chlorate</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006950">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to stress</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031346">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of cell projection organization</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046855">
+    <rdfs:subClassOf>go:0071545</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0046838</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inositol phosphate dephosphorylation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0034097">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to cytokine stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0016486">
+    <rdfs:subClassOf>go:0016485</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0042445</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peptide hormone processing</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0030816">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of cAMP metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005319">
+    <rdfs:subClassOf>go:0022892</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lipid transporter activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043231">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intracellular membrane-bounded organelle</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0019866">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organelle inner membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006639">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acylglycerol metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0015992">
+    <rdfs:subClassOf>go:0006818</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0015672</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proton transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046943">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carboxylic acid transmembrane transporter activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043005">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuron projection</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0021983">
+    <rdfs:subClassOf>go:0048732</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pituitary gland development</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006807">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nitrogen compound metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0022892">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">substrate-specific transporter activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044238">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005886">
+    <rdfs:subClassOf>go:0016020</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044464</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plasma membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0034220">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ion transmembrane transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006818">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrogen transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0030817">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of cAMP biosynthetic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0008289">
+    <rdfs:subClassOf>go:0005488</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lipid binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0004977">
+    <rdfs:subClassOf>go:0008528</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">melanocortin receptor activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005887">
+    <rdfs:subClassOf>go:0031226</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0016021</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integral to plasma membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044710">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single-organism metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044237">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0010975">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of neuron projection development</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0045944">
+    <rdfs:subClassOf>go:0006357</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0045893</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of transcription from RNA polymerase II promoter</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0033993">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to lipid</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0030154">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell differentiation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0032580">
+    <rdfs:subClassOf>go:0000139</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Golgi cisterna membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043604">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amide biosynthetic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:1901652">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to peptide</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0015370">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solute:sodium symporter activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0045893">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of transcription, DNA-dependent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031348">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of defense response</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044297">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell body</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/geneid:4159">
+    <j.1:subband>20q13.2</j.1:subband>
+    <j.0:function>http://bio2rdf.org/go:0004977</j.0:function>
+    <j.0:function>http://bio2rdf.org/go:0005515</j.0:function>
+    <j.0:component>http://bio2rdf.org/go:0005887</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0007200</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0007187</j.0:process>
+    <j.1:occurence>1</j.1:occurence>
+    <j.1:region>20q1</j.1:region>
+    <j.1:arm>20q</j.1:arm>
+    <j.0:component>http://bio2rdf.org/go:0005886</j.0:component>
+    <j.1:chrom>20</j.1:chrom>
+    <j.0:function>http://bio2rdf.org/go:0017046</j.0:function>
+    <j.0:process>http://bio2rdf.org/go:0007188</j.0:process>
+    <j.1:band>20q13</j.1:band>
+    <j.1:subband>20q13.3</j.1:subband>
+    <j.0:process>http://bio2rdf.org/go:0030819</j.0:process>
+    <j.0:has_symbol>MC3R</j.0:has_symbol>
+    <j.0:function>http://bio2rdf.org/go:0042923</j.0:function>
+    <j.0:function>http://bio2rdf.org/go:0004980</j.0:function>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042277">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peptide binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0001666">
+    <rdfs:subClassOf>go:0036293</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0006950</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to hypoxia</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0030425">
+    <rdfs:subClassOf>go:0043005</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dendrite</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006869">
+    <rdfs:subClassOf>go:0071702</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044765</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lipid transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0048732">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gland development</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0015031">
+    <rdfs:subClassOf>go:0071702</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0045184</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0048522">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of cellular process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042579">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microbody</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0032720">
+    <rdfs:subClassOf>go:0032680</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0001818</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of tumor necrosis factor production</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/geneid:5443">
+    <j.0:process>http://bio2rdf.org/go:0007218</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0008217</j.0:process>
+    <j.1:band>2p23</j.1:band>
+    <j.1:chrom>2</j.1:chrom>
+    <j.0:process>http://bio2rdf.org/go:0033059</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0007165</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0006091</j.0:process>
+    <j.1:occurence>1</j.1:occurence>
+    <j.0:component>http://bio2rdf.org/go:0005737</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0044281</j.0:process>
+    <j.1:subband>2p23.3</j.1:subband>
+    <j.0:process>http://bio2rdf.org/go:0032720</j.0:process>
+    <j.0:function>http://bio2rdf.org/go:0001664</j.0:function>
+    <j.0:function>http://bio2rdf.org/go:0005102</j.0:function>
+    <j.1:region>2p2</j.1:region>
+    <j.0:component>http://bio2rdf.org/go:0005576</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0045944</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0034641</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0032098</j.0:process>
+    <j.0:function>http://bio2rdf.org/go:0070996</j.0:function>
+    <j.1:arm>2p</j.1:arm>
+    <j.0:function>http://bio2rdf.org/go:0005179</j.0:function>
+    <j.0:process>http://bio2rdf.org/go:0007267</j.0:process>
+    <j.0:function>http://bio2rdf.org/go:0031781</j.0:function>
+    <j.0:has_symbol>POMC</j.0:has_symbol>
+    <j.0:process>http://bio2rdf.org/go:0016486</j.0:process>
+    <j.0:function>http://bio2rdf.org/go:0031782</j.0:function>
+    <j.0:component>http://bio2rdf.org/go:0005615</j.0:component>
+    <j.0:component>http://bio2rdf.org/go:0030141</j.0:component>
+    <j.0:component>http://bio2rdf.org/go:0005777</j.0:component>
+    <j.0:component>http://bio2rdf.org/go:0005782</j.0:component>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031782">
+    <rdfs:subClassOf>go:0031779</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type 4 melanocortin receptor binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0030141">
+    <rdfs:subClassOf>go:0016023</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secretory granule</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0009790">
+    <rdfs:subClassOf>go:0044767</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0048856</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">embryo development</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0055092">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sterol homeostasis</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0032098">
+    <rdfs:subClassOf>go:0065008</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of appetite</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0004445">
+    <rdfs:subClassOf>go:0046030</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inositol-polyphosphate 5-phosphatase activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0007218">
+    <rdfs:subClassOf>go:0007186</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuropeptide signaling pathway</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031781">
+    <rdfs:subClassOf>go:0031779</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type 3 melanocortin receptor binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005737">
+    <rdfs:subClassOf>go:0044424</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytoplasm</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0030819">
+    <rdfs:subClassOf>go:0030804</rdfs:subClassOf>
+    <rdfs:subClassOf>go:1900373</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0030816</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0030817</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of cAMP biosynthetic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0035085">
+    <rdfs:subClassOf>go:0044444</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044441</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0005930</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cilium axoneme</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0051716">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular response to stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046488">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphatidylinositol metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0009914">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hormone transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006091">
+    <rdfs:subClassOf>go:0044237</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">generation of precursor metabolites and energy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0000303">
+    <rdfs:subClassOf>go:0010035</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0000302</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to superoxide</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042562">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hormone binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006629">
+    <rdfs:subClassOf>go:0071704</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044238</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044710</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lipid metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005777">
+    <rdfs:subClassOf>go:0042579</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peroxisome</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043559">
+    <rdfs:subClassOf>go:0017046</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">insulin binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0033059">
+    <rdfs:subClassOf>go:0043473</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044763</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular pigmentation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0008150">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological_process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006357">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of transcription from RNA polymerase II promoter</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0034641">
+    <rdfs:subClassOf>go:0006807</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044237</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular nitrogen compound metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031966">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mitochondrial membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044441">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cilium part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042221">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to chemical stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005326">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neurotransmitter transporter activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0004175">
+    <rdfs:subClassOf>go:0070011</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endopeptidase activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044306">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuron projection terminus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:1901566">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organonitrogen compound biosynthetic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0034595">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphatidylinositol phosphate 5-phosphatase activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043025">
+    <rdfs:subClassOf>go:0044297</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0097458</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuronal cell body</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006641">
+    <rdfs:subClassOf>go:0006639</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">triglyceride metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0048678">
+    <rdfs:subClassOf>go:0009611</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to axon injury</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044763">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single-organism cellular process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0070013">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intracellular organelle lumen</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:1900373">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of purine nucleotide biosynthetic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006497">
+    <rdfs:subClassOf>go:0006464</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein lipidation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042157">
+    <rdfs:subClassOf>go:0019538</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lipoprotein metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0002237">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to molecule of bacterial origin</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0032496">
+    <rdfs:subClassOf>go:0002237</rdfs:subClassOf>
+    <rdfs:subClassOf>go:1901700</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0033993</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to lipopolysaccharide</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0008217">
+    <rdfs:subClassOf>go:0065008</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of blood pressure</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0071375">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular response to peptide hormone stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046834">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lipid phosphorylation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031528">
+    <rdfs:subClassOf>go:0031253</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microvillus membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0051087">
+    <rdfs:subClassOf>go:0005515</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chaperone binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006508">
+    <rdfs:subClassOf>go:0019538</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proteolysis</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0050727">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of inflammatory response</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044281">
+    <rdfs:subClassOf>go:0044710</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small molecule metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031016">
+    <rdfs:subClassOf>go:0048513</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044767</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pancreas development</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0050707">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of cytokine secretion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006518">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peptide metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0004930">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G-protein coupled receptor activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0034185">
+    <rdfs:subClassOf>go:0005515</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">apolipoprotein binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0009725">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to hormone stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0050796">
+    <rdfs:subClassOf>go:0090276</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of insulin secretion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/geneid:56623">
+    <j.0:process>http://bio2rdf.org/go:0046856</j.0:process>
+    <j.1:arm>9q</j.1:arm>
+    <j.1:occurence>1</j.1:occurence>
+    <j.0:component>http://bio2rdf.org/go:0005856</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0010976</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0005886</j.0:component>
+    <j.1:region>9q3</j.1:region>
+    <j.1:band>9q34</j.1:band>
+    <j.0:component>http://bio2rdf.org/go:0035085</j.0:component>
+    <j.0:has_symbol>INPP5E</j.0:has_symbol>
+    <j.0:process>http://bio2rdf.org/go:0008150</j.0:process>
+    <j.1:chrom>9</j.1:chrom>
+    <j.1:subband>9q34.3</j.1:subband>
+    <j.0:component>http://bio2rdf.org/go:0032580</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0046855</j.0:process>
+    <j.0:function>http://bio2rdf.org/go:0004439</j.0:function>
+    <j.0:function>http://bio2rdf.org/go:0004445</j.0:function>
+    <j.0:process>http://bio2rdf.org/go:0046854</j.0:process>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0007267">
+    <rdfs:subClassOf>go:0044700</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0007154</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell-cell signaling</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005328">
+    <rdfs:subClassOf>go:0005326</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0015370</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neurotransmitter:sodium symporter activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005791">
+    <rdfs:subClassOf>go:0005783</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rough endoplasmic reticulum</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0007200">
+    <rdfs:subClassOf>go:0007186</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phospholipase C-activating G-protein coupled receptor signaling pathway</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031253">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell projection membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0032680">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of tumor necrosis factor production</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0016023">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytoplasmic membrane-bounded vesicle</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043679">
+    <rdfs:subClassOf>go:0044306</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0033267</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">axon terminus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:1901564">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organonitrogen compound metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005102">
+    <rdfs:subClassOf>go:0005515</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receptor binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0050708">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of protein secretion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0007154">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell communication</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0032102">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of response to external stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0019538">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0034593">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphatidylinositol bisphosphate phosphatase activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0015672">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monovalent inorganic cation transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0070542">
+    <rdfs:subClassOf>go:1901700</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0033993</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to fatty acid</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0050728">
+    <rdfs:subClassOf>go:0032102</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0031348</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0050727</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of inflammatory response</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043434">
+    <rdfs:subClassOf>go:1901652</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0009725</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to peptide hormone stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0015171">
+    <rdfs:subClassOf>go:0046943</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amino acid transmembrane transporter activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031982">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vesicle</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043278">
+    <rdfs:subClassOf>go:0060359</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0014072</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to morphine</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044765">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single-organism transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0033293">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monocarboxylic acid binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0022008">
+    <rdfs:subClassOf>go:0030154</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neurogenesis</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031526">
+    <rdfs:subClassOf>go:0031253</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brush border membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0007165">
+    <rdfs:subClassOf>go:0050794</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0051716</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">signal transduction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0001664">
+    <rdfs:subClassOf>go:0005102</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G-protein coupled receptor binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0010976">
+    <rdfs:subClassOf>go:0031346</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0010975</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of neuron projection development</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0050709">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of protein secretion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005615">
+    <rdfs:subClassOf>go:0044421</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extracellular space</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044459">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plasma membrane part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0009636">
+    <rdfs:subClassOf>go:0042221</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to toxic substance</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0050794">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of cellular process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005576">
+    <rdfs:subClassOf>go:0005575</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extracellular region</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/geneid:11254">
+    <j.0:process>http://bio2rdf.org/go:0006810</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0055085</j.0:process>
+    <j.1:region>Xq2</j.1:region>
+    <j.0:process>http://bio2rdf.org/go:0006811</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0006865</j.0:process>
+    <j.0:has_symbol>SLC6A14</j.0:has_symbol>
+    <j.0:component>http://bio2rdf.org/go:0016021</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0006520</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0005886</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0009636</j.0:process>
+    <j.1:arm>Xq</j.1:arm>
+    <j.0:process>http://bio2rdf.org/go:0003333</j.0:process>
+    <j.1:chrom>X</j.1:chrom>
+    <j.1:band>Xq23</j.1:band>
+    <j.1:occurence>1</j.1:occurence>
+    <j.0:function>http://bio2rdf.org/go:0005328</j.0:function>
+    <j.0:function>http://bio2rdf.org/go:0015171</j.0:function>
+    <j.0:component>http://bio2rdf.org/go:0031526</j.0:component>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0004980">
+    <rdfs:subClassOf>go:0004977</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">melanocyte-stimulating hormone receptor activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0016323">
+    <rdfs:subClassOf>go:0044459</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basolateral plasma membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042493">
+    <rdfs:subClassOf>go:0042221</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to drug</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0032868">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to insulin stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0016021">
+    <rdfs:subClassOf>go:0031224</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integral to membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0051234">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">establishment of localization</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0009991">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to extracellular stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031960">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to corticosteroid stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046839">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phospholipid dephosphorylation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0019752">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carboxylic acid metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0001818">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negative regulation of cytokine production</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0030133">
+    <rdfs:subClassOf>go:0016023</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transport vesicle</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006810">
+    <rdfs:subClassOf>go:0051234</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0032869">
+    <rdfs:subClassOf>go:0032868</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0071375</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular response to insulin stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031988">
+    <rdfs:subClassOf>go:0031982</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">membrane-bounded vesicle</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046879">
+    <rdfs:subClassOf>go:0032940</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0023061</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0009914</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hormone secretion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044700">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single organism signaling</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044432">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endoplasmic reticulum part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006839">
+    <rdfs:subClassOf>go:0044765</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0046907</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mitochondrial transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005575">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular_component</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042445">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hormone metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005794">
+    <rdfs:subClassOf>go:0044444</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0043231</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Golgi apparatus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0009749">
+    <rdfs:subClassOf>go:0009746</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to glucose stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0008236">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">serine-type peptidase activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044767">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single-organism developmental process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0055085">
+    <rdfs:subClassOf>go:0044765</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044763</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transmembrane transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0016020">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031226">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intrinsic to plasma membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046838">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphorylated carbohydrate dephosphorylation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0051592">
+    <rdfs:subClassOf>go:0010038</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to calcium ion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0048513">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organ development</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0042923">
+    <rdfs:subClassOf>go:0042277</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuropeptide binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0051047">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of secretion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0022904">
+    <rdfs:subClassOf>go:0022900</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">respiratory electron transport chain</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0010035">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to inorganic substance</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031779">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">melanocortin receptor binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/geneid:7351">
+    <j.0:process>http://bio2rdf.org/go:0006810</j.0:process>
+    <j.0:has_symbol>UCP2</j.0:has_symbol>
+    <j.0:process>http://bio2rdf.org/go:0022904</j.0:process>
+    <j.1:region>11q1</j.1:region>
+    <j.0:process>http://bio2rdf.org/go:0000303</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0070542</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0016021</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0009749</j.0:process>
+    <j.1:chrom>11</j.1:chrom>
+    <j.1:arm>11q</j.1:arm>
+    <j.0:process>http://bio2rdf.org/go:0032869</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0006839</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0015992</j.0:process>
+    <j.1:band>11q13</j.1:band>
+    <j.0:component>http://bio2rdf.org/go:0005743</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0001666</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0044281</j.0:process>
+    <j.1:occurence>1</j.1:occurence>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0070555">
+    <rdfs:subClassOf>go:0034097</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to interleukin-1</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0000139">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Golgi membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005802">
+    <rdfs:subClassOf>go:0043231</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trans-Golgi network</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005743">
+    <rdfs:subClassOf>go:0019866</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0031966</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mitochondrial inner membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0009746">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to hexose stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0030139">
+    <rdfs:subClassOf>go:0016023</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endocytic vesicle</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0043473">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pigmentation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0010038">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to metal ion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0051222">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of protein transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0050714">
+    <rdfs:subClassOf>go:0048522</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0050708</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0051222</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0051047</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positive regulation of protein secretion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044444">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytoplasmic part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0003333">
+    <rdfs:subClassOf>go:0034220</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0006865</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amino acid transmembrane transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0007188">
+    <rdfs:subClassOf>go:0007187</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenylate cyclase-modulating G-protein coupled receptor signaling pathway</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005782">
+    <rdfs:subClassOf>go:0031907</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0044439</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peroxisomal matrix</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bio2rdf.org/geneid:4547">
+    <j.0:process>http://bio2rdf.org/go:0044281</j.0:process>
+    <j.0:process>http://bio2rdf.org/go:0051592</j.0:process>
+    <j.1:band>4q24</j.1:band>
+    <j.0:component>http://bio2rdf.org/go:0031988</j.0:component>
+    <j.0:function>http://bio2rdf.org/go:0034185</j.0:function>
+    <j.0:process>http://bio2rdf.org/go:0006497</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0016323</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0006641</j.0:process>
+    <j.0:component>http://bio2rdf.org/go:0005794</j.0:component>
+    <j.1:arm>4q</j.1:arm>
+    <j.0:process>http://bio2rdf.org/go:0042953</j.0:process>
+    <j.1:region>4q2</j.1:region>
+    <j.0:component>http://bio2rdf.org/go:0005791</j.0:component>
+    <j.0:function>http://bio2rdf.org/go:0005319</j.0:function>
+    <j.0:component>http://bio2rdf.org/go:0031528</j.0:component>
+    <j.0:function>http://bio2rdf.org/go:0008289</j.0:function>
+    <j.0:component>http://bio2rdf.org/go:0005788</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0042157</j.0:process>
+    <j.1:chrom>4</j.1:chrom>
+    <j.0:component>http://bio2rdf.org/go:0031526</j.0:component>
+    <j.0:process>http://bio2rdf.org/go:0042632</j.0:process>
+    <j.0:function>http://bio2rdf.org/go:0046982</j.0:function>
+    <j.0:process>http://bio2rdf.org/go:0006869</j.0:process>
+    <j.1:occurence>2</j.1:occurence>
+    <j.0:process>http://bio2rdf.org/go:0006629</j.0:process>
+    <j.0:has_symbol>MTTP</j.0:has_symbol>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0009611">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to wounding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0071704">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic substance metabolic process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0070011">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peptidase activity, acting on L-amino acid peptides</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0031224">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intrinsic to membrane</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005179">
+    <rdfs:subClassOf>go:0005102</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hormone activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005488">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">binding</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005856">
+    <rdfs:subClassOf>go:0043232</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cytoskeleton</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0051049">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0048471">
+    <rdfs:subClassOf>go:0044444</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perinuclear region of cytoplasm</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0016540">
+    <rdfs:subClassOf>go:0016485</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein autoprocessing</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0033267">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">axon part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0051384">
+    <rdfs:subClassOf>go:0031960</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">response to glucocorticoid stimulus</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0044464">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0032940">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secretion by cell</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0016485">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein processing</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0046856">
+    <rdfs:subClassOf>go:0046839</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0046488</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphatidylinositol dephosphorylation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0005783">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endoplasmic reticulum</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0071705">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nitrogen compound transport</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0065008">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of biological quality</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="go:0006520">
+    <rdfs:subClassOf>go:0044238</rdfs:subClassOf>
+    <rdfs:subClassOf>go:0019752</rdfs:subClassOf>
+    <rdfs:subClassOf>go:1901564</rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellular amino acid metabolic process</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>
