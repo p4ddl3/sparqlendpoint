@@ -1,3 +1,6 @@
+import javax.swing.JFrame;
+import javax.swing.JTabbedPane;
+
 import org.apache.log4j.BasicConfigurator;
 
 
@@ -9,7 +12,7 @@ public class EndPoint {
 	public static void main(String[] args){
 		BasicConfigurator.configure();
 		EndPointFrame frame = new EndPointFrame();
-		frame.setVisible(true);	
+		frame.setVisible(true);
 		//pt
 	}
 

@@ -1,151 +1,141 @@
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.Action;
-import javax.swing.JButton;
-import javax.swing.JEditorPane;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import javax.swing.KeyStroke;
-import javax.swing.SwingUtilities;
 
-import java.awt.event.KeyEvent;
-import javax.swing.AbstractAction;
-import java.awt.* ;
+import model.EndPointLocation;
 
 public class EndPointFrame extends JFrame implements ActionListener, Observer{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTabbedPane tabbedPane;
 	
-	//file selection
-	private JPanel fileSelecPanel;
-	private JTextField fileNameField;
-	private JButton selectRDFsource;
+	//menu
+	private JMenuBar menuBar;
+	private JMenu menuEndPoint;
+	private JMenuItem itemSelectEndPoint;
+	private JMenuItem itemAddTab;
+	private JMenuItem itemDelTab;
 	
-	//query execution
-	private JPanel queryPanel;
-	private JTabbedPane tabbedQueryPane;
-	private JEditorPane queryPane;
-	private JEditorPane errorPane;
-	private JButton queryExecuteButton;
-	
-	//result view
-	private JTable resultView;
-	private ResultViewModel viewModel;
-	
-	private ModelTarget target;
-	
-
-	
-	
+	private EndPointLocation endPointLocation;
+	private List<EndPointPane> panes;
 	public EndPointFrame() {
-		super("EndPoint");
-		this.target = new ModelTarget();
-		this.target.addObs(this);
+		super("EndPoint Client");
+		
+		endPointLocation = new EndPointLocation();
+		
+		menuBar = new JMenuBar();
+		menuEndPoint = new JMenu("EndPoint");
+		
+		itemSelectEndPoint = new JMenuItem("Select EndPoint location");
+		itemSelectEndPoint.addActionListener(this);
+		menuEndPoint.add(itemSelectEndPoint);
+		
+		itemAddTab = new JMenuItem("Add Tab...");
+		itemDelTab = new JMenuItem("Del Tab...");
+		itemAddTab.addActionListener(this);
+		itemDelTab.addActionListener(this);
+		menuEndPoint.add(itemAddTab);
+		menuEndPoint.add(itemDelTab);
+		
+		
+		menuBar.add(menuEndPoint);
+		setJMenuBar(menuBar);
 		contentPane = new JPanel();
 		contentPane.setLayout(new BorderLayout());
-		setContentPane(contentPane);
-		
-		fileSelecPanel = new JPanel();
-		fileSelecPanel.setLayout(new BorderLayout());
-		
-		fileNameField = new JTextField();
-		fileNameField.setEditable(false);
-		fileSelecPanel.add(fileNameField, BorderLayout.CENTER);
-		
-		selectRDFsource = new JButton("Select RDF");
-		selectRDFsource.addActionListener(this);
-		fileSelecPanel.add(selectRDFsource, BorderLayout.EAST);
-		
-		contentPane.add(fileSelecPanel, BorderLayout.NORTH);
-		
-		
-		queryPanel = new JPanel();
-		queryPanel.setLayout(new BorderLayout());
-		
-		tabbedQueryPane = new JTabbedPane();
-		
-		
-		tabbedQueryPane.add(new LineNumberingTextArea((queryPane = new JEditorPane())), "Query");
 
-		
-		errorPane = new JEditorPane();
-		errorPane.setEditable(false);
-		errorPane.setForeground(Color.red);
-		tabbedQueryPane.add(new LineNumberingTextArea(errorPane), "Errors");
-		
-		queryPanel.add(tabbedQueryPane, BorderLayout.CENTER);
-		
-		
-		queryExecuteButton = new JButton("Execute");
-		queryExecuteButton.addActionListener(this);
-		queryExecuteButton.setEnabled(false);
-		queryPanel.add(queryExecuteButton, BorderLayout.EAST);
-		queryPanel.setPreferredSize(new Dimension(200, 200));
-		//contentPane.add(queryPanel, BorderLayout.SOUTH);
-		
-		
-		viewModel = new ResultViewModel();
-		viewModel.setModel(target);
-		resultView = new JTable(viewModel);
-		JScrollPane scroll = new JScrollPane(resultView);
-		//contentPane.add(scroll, BorderLayout.CENTER);
-		
-		//splitPane
-		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-		splitPane.add(scroll);
-		splitPane.add(queryPanel);
-		contentPane.add(splitPane, BorderLayout.CENTER);
-		
+		tabbedPane = new JTabbedPane();
+		panes = new ArrayList<EndPointPane>();
+		addPane("tab1");
+		contentPane.add(tabbedPane, BorderLayout.CENTER);
+		setContentPane(contentPane);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 	}
 
-
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		if(event.getSource() == queryExecuteButton){
-			String query = queryPane.getText();
-			target.executeQuery(query);
-		}
-		if(event.getSource() == selectRDFsource){
-			SourceSelector selector = new SourceSelector(target);
+		if(event.getSource() == itemSelectEndPoint){
+			SourceSelector selector = new SourceSelector(endPointLocation);
 			selector.setVisible(true);
 		}
+		if(event.getSource() == itemAddTab){
+			String s = (String)JOptionPane.showInputDialog(this,
+					"Enter the tab name to add..."
+					);
+			if(!s.isEmpty())
+				addPane(s);
+			return;
+		}
+		if(event.getSource() == itemDelTab){
+			String s = (String)JOptionPane.showInputDialog(this,
+					"Enter the tab name to delete..."
+					);
+			if(!s.isEmpty())
+				removePane(s);
+			return;
+		}
 		
 	}
-
+	public EndPointLocation getEndPointLocation(){
+		return endPointLocation;
+	}
+	public void setEndPointLocation(EndPointLocation target){
+		endPointLocation = target;
+	}
 
 	@Override
-	public void update(Observable arg0, Object arg1) {
-		if(arg0 instanceof ModelTarget){
-			ModelTarget targ = (ModelTarget) arg0;
-			if(targ.isReady())
-				queryExecuteButton.setEnabled(true);
-			else
-				queryExecuteButton.setEnabled(false);
-			fileNameField.setText(targ.getURL());
-			errorPane.setText(targ.getErrorMessage());
-			if(!errorPane.getText().equals("")){//il y'a une erreur
-				tabbedQueryPane.setSelectedIndex(1);
-			}
-		}
-		setTitle("EndPoint ("+viewModel.getNbLines()+" lines selected)");
+	public void update(Observable o, Object arg) {
+
 		
 	}
+	public EndPointPane addPane(String name){
+		if(getPaneByName(name) != null){
+			System.out.println("name already used");
+			return null;
+		}
+		EndPointPane pane = new EndPointPane(this, name);
+		panes.add(pane);
+		tabbedPane.add(pane, name);
+		return pane;
+	}
+	public void removePane(String name){
+		EndPointPane pane = getPaneByName(name);
+		if(pane != null){
+			int index = panes.indexOf(pane);
+			panes.remove(index);
+			tabbedPane.remove(index);
+
+		}
+	}
+	public EndPointPane getPaneByName(String name){
+		for(EndPointPane pane : panes)
+			if(pane.getName().equals(name))
+				return pane;
+		return null;
+	}
+	public void runQueryInNewPane(String query, String name){
+		EndPointPane pane = addPane(name);
+		if(pane == null)//si on arrive pas a créer le tab on arrete tout
+			return;
+		pane.setQueryAndRun(query);//on lance la resuete dans le tab
+		tabbedPane.setSelectedIndex(panes.size()-1);//et on se met dessus
+		
+	}
+	
+
+
+
 
 }

@@ -1,0 +1,13 @@
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT distinct ?xref 
+WHERE {
+ ?p rdf:type <http://bio2rdf.org/omim_vocabulary:Phenotype> .
+ ?p <http://bio2rdf.org/omim_vocabulary:preferred-title> ?title .
+ FILTER 	( regex(?title, "mental retardation", "i")).
+?g rdf:type <http://bio2rdf.org/omim_vocabulary:Gene> . 
+?g <http://bio2rdf.org/omim_vocabulary:phenotype> ?p . 
+?g <http://bio2rdf.org/omim_vocabulary:xref> ?xref . 
+FILTER regex(?xref, "^http://bio2rdf.org/geneid:[0-9]*$")
+}
+http://cu.omim.bio2rdf.org/sparql
