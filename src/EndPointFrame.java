@@ -1,11 +1,21 @@
 import java.awt.BorderLayout;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
+import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -13,11 +23,16 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 
 import model.EndPointLocation;
 
-public class EndPointFrame extends JFrame implements ActionListener, Observer{
+public class EndPointFrame extends JFrame implements ActionListener, Observer, MouseListener{
 	private static final long serialVersionUID = 1L;
+	
+	private static Map<KeyStroke,Action> actionMap;
+	
 	private JPanel contentPane;
 	private JTabbedPane tabbedPane;
 	
@@ -56,11 +71,13 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer{
 		contentPane.setLayout(new BorderLayout());
 
 		tabbedPane = new JTabbedPane();
+		tabbedPane.addMouseListener(this);
 		panes = new ArrayList<EndPointPane>();
 		addPane("tab1");
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 		setContentPane(contentPane);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setup();
 		pack();
 	}
 
@@ -131,6 +148,81 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer{
 			return;
 		pane.setQueryAndRun(query);//on lance la resuete dans le tab
 		tabbedPane.setSelectedIndex(panes.size()-1);//et on se met dessus
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if(e.getButton() == MouseEvent.BUTTON3){
+			EndPointPane pane = (EndPointPane)tabbedPane.getSelectedComponent();
+			TabPopup popup = new TabPopup(this,pane.getName());
+			popup.show(e.getComponent(), e.getX(), e.getY());
+		}
+	}
+	
+	public  void setup(){
+		actionMap = new HashMap<KeyStroke, Action>();
+		KeyStroke ctrlF = KeyStroke.getKeyStroke(KeyEvent.VK_F, KeyEvent.CTRL_DOWN_MASK);
+		actionMap.put(ctrlF, new AbstractAction("search"){
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int index = tabbedPane.getSelectedIndex();
+				EndPointPane pane = panes.get(index);
+				pane.showPanel(true);
+				
+			}
+			
+		});
+		KeyboardFocusManager kfm = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+		kfm.addKeyEventDispatcher(new KeyEventDispatcher(){
+
+			@Override
+			public boolean dispatchKeyEvent(KeyEvent e) {
+				KeyStroke keyStroke = KeyStroke.getKeyStrokeForEvent(e);
+				if(actionMap.containsKey(keyStroke)){
+					final Action a = actionMap.get(keyStroke);
+					final ActionEvent ae = new ActionEvent(e.getSource(),e.getID(),null);
+					SwingUtilities.invokeLater(new Runnable(){
+
+						@Override
+						public void run() {
+							a.actionPerformed(ae);
+							
+						}
+						
+					});
+					return true;
+				}
+				return false;
+			}
+			
+		});
+	}
+	
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 	

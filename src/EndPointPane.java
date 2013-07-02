@@ -10,6 +10,7 @@ import java.awt.event.MouseListener;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.ActionMap;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -41,10 +42,11 @@ public class EndPointPane extends JPanel implements Observer, ActionListener, Mo
 	private RSyntaxTextArea errorPane;
 	private JButton queryExecuteButton;
 	private JButton previousQueryButton;
-	
 	//result view
 	private JTable resultView;
 	private ResultViewModel viewModel;
+	private JPanel viewPanel;
+	private FilterPanel filter;
 	
 	private QueryExecutor executor;
 	private ResultModel resultModel;
@@ -113,9 +115,14 @@ public class EndPointPane extends JPanel implements Observer, ActionListener, Mo
 		resultView.setInheritsPopupMenu(true);
 		JScrollPane scroll = new JScrollPane(resultView);
 		
+		viewPanel = new JPanel();
+		viewPanel.setLayout(new BorderLayout());
+		viewPanel.add(scroll, BorderLayout.CENTER);
+		filter = new FilterPanel(this,viewModel);
+		viewPanel.add(filter, BorderLayout.SOUTH);
 		//splitPane
 		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-		splitPane.add(scroll);
+		splitPane.add(viewPanel);
 		splitPane.add(queryPanel);
 		add(splitPane, BorderLayout.CENTER);
 		
@@ -174,15 +181,26 @@ public class EndPointPane extends JPanel implements Observer, ActionListener, Mo
 	public void mouseClicked(MouseEvent e) {
 		int col = resultView.getSelectedColumn();
 		int row = resultView.getSelectedRow();
-		String str = viewModel.getValueAt(row, col).toString();
-		CellTablePopUp popup = new CellTablePopUp(this,str);
-		popup.show(e.getComponent(),e.getX(), e.getY());
+		if( 		col >= 0 && col < resultView.getColumnCount()
+				&& 	row >= 0 && row < resultView.getRowCount()){
+			String str = viewModel.getValueAt(row, col).toString();
+			CellTablePopUp popup = new CellTablePopUp(this,str);
+			popup.show(e.getComponent(),e.getX(), e.getY());
+		}
 	}
 	public void setQueryAndRun(String query){
 		queryPane.setText(query);
 		resultModel.setResults(executor.pushQueryAndExec(query));
 	}
-	
+	public void showPanel(boolean aFlag){
+		if(aFlag)
+			filter.activate();
+		else
+			filter.desactivate();
+	}
+	public ResultViewModel getViewModel(){
+		return viewModel;
+	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
