@@ -29,10 +29,14 @@ public class SourceSelector extends JFrame implements ActionListener{
 	private JTextField remoteSourceText;
 	private JButton okButton;
 	private JButton browseButton;
+	private JButton paramsButton;
 	private JFileChooser fileChooser;
 	private JRadioButton local;
 	private JRadioButton remote;
+	
+	
 	private EndPointLocation location;
+	
 	public SourceSelector(EndPointLocation location) {
 		super("RDF source selection");
 		contentPane = new JPanel();
@@ -51,6 +55,9 @@ public class SourceSelector extends JFrame implements ActionListener{
 		localSourceText.setColumns(20);
 		browseButton = new JButton("browse");
 		browseButton.addActionListener(this);
+		
+		paramsButton = new JButton("params");
+		paramsButton.addActionListener(this);
 		remoteSourceText = new JTextField();
 		okButton = new JButton("Apply");
 		okButton.addActionListener(this);
@@ -90,7 +97,8 @@ public class SourceSelector extends JFrame implements ActionListener{
 		panelSelection.add(remote, c);
 		c.gridx = 1;
 		panelSelection.add(remoteSourceText, c);
-		c.gridy = 3;
+		c.gridx = 2;
+		panelSelection.add(paramsButton, c);
 		contentPane.add(actualLocation,BorderLayout.NORTH);
 		contentPane.add(panelSelection, BorderLayout.CENTER);
 		
@@ -126,6 +134,9 @@ public class SourceSelector extends JFrame implements ActionListener{
 				localSourceText.setText(file.getAbsolutePath());
 			}
 		}
+		if(event.getSource() == paramsButton){
+			new ParamsFrame(location);
+		}
 		
 	}
 	public void init(){
@@ -143,10 +154,12 @@ public class SourceSelector extends JFrame implements ActionListener{
 			remoteSourceText.setEnabled(true);
 			localSourceText.setEditable(false);
 			browseButton.setEnabled(false);
+			paramsButton.setEnabled(true);
 		}else{
 			remoteSourceText.setEnabled(false);
 			localSourceText.setEditable(true);
 			browseButton.setEnabled(true);
+			paramsButton.setEnabled(false);
 		}
 	}
 

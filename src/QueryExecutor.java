@@ -26,6 +26,11 @@ public class QueryExecutor extends Observable{
 		List<ResultSet> results = new ArrayList<ResultSet>();
 		queries.push(query);
 		queryExec = new SparqlQueryExecutor(location, new SparqlQueryFromString(query), 1000);
+		if(location.isRemote()){
+			for(String key : location.getParams().keySet()){
+				queryExec.addParam(key, location.getParams().get(key));
+			}
+		}
 		results = queryExec.execute();
 		if(results == null){
 			errorMessage = queryExec.getErrorMessage();

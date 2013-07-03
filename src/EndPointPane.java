@@ -21,9 +21,15 @@ import javax.swing.JTable;
 import model.EndPointLocation;
 import model.ResultModel;
 
+import org.fife.ui.rsyntaxtextarea.AbstractTokenMakerFactory;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
+import org.fife.ui.rsyntaxtextarea.SyntaxScheme;
+import org.fife.ui.rsyntaxtextarea.Token;
+import org.fife.ui.rsyntaxtextarea.TokenMakerFactory;
 import org.fife.ui.rtextarea.RTextScrollPane;
+
+import com.hp.hpl.jena.query.Syntax;
 
 import util.Bundle;
 
@@ -71,7 +77,11 @@ public class EndPointPane extends JPanel implements Observer, ActionListener, Mo
 		
 		
 		queryPane = new RSyntaxTextArea();
-		queryPane.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_SQL);
+		AbstractTokenMakerFactory atmf = (AbstractTokenMakerFactory)TokenMakerFactory.getDefaultInstance();
+		atmf.putMapping("text/sparql", "syntax.SparqlTokenMaker");
+		queryPane.setAutoIndentEnabled(true);
+		queryPane.setHyperlinksEnabled(true);
+		queryPane.setSyntaxEditingStyle("text/sparql");
 		queryPane.setCodeFoldingEnabled(true);
 		queryPane.setAntiAliasingEnabled(true);
 		RTextScrollPane scrollp = new RTextScrollPane(queryPane);

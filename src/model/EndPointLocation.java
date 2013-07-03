@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Observable;
 
 import sparql.AbstractQueryExecution;
@@ -20,7 +22,9 @@ public class EndPointLocation extends Observable{
 	private boolean remote;
 	private boolean loaded;
 	private Model localModel;
+	private Map<String, String> params;
 	public EndPointLocation(){
+		params = new HashMap<String, String>();
 	}
 	public void setRemote(boolean remote){
 		this.remote = remote;
@@ -63,5 +67,14 @@ public class EndPointLocation extends Observable{
 			aqe.setAbstractQueryExecution(QueryExecutionFactory.create(query, localModel));
 		}
 		return aqe;
+	}
+	public Map<String, String> getParams(){
+		return params;
+	}
+	public void clearParams(){
+		params.clear();
+	}
+	public void setParams(String key, String value){
+		params.put(key,  value);
 	}
 }
