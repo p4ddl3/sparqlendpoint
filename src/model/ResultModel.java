@@ -12,15 +12,11 @@ import com.hp.hpl.jena.query.ResultSet;
 public class ResultModel extends Observable{
 	private List<QuerySolution> results;
 	private String[] columnNames;
+	private String errorMessage;
 	public ResultModel(){
 	}
 	public void setResults(List<ResultSet> results){
 		this.results = new ArrayList<QuerySolution>();
-		if(results == null){//error
-			setChanged();
-			notifyObservers(new Bundle("resultModel").put("action", "error"));
-			return;
-		}
 		for(ResultSet set : results){
 			while(set.hasNext()){
 				this.results.add(set.nextSolution());
@@ -31,6 +27,7 @@ public class ResultModel extends Observable{
 		for(int i = 0; i < nbCol; i++){
 			columnNames[i] = results.get(0).getResultVars().get(i);
 		}
+		errorMessage = null;
 		setChanged();
 		notifyObservers(new Bundle("resultModel").put("action", "updated"));
 	}
@@ -39,6 +36,14 @@ public class ResultModel extends Observable{
 	}
 	public String[] getColumnNames(){
 		return columnNames;
+	}
+	public void setErrorMessage(String errorMessage){
+		this.errorMessage = errorMessage;
+		setChanged();
+		notifyObservers(new Bundle("resultModel").put("action", "error"));
+	}
+	public String getErrorMessage(){
+		return errorMessage;
 	}
 	
 }

@@ -3,6 +3,8 @@ import javax.swing.JTabbedPane;
 
 import org.apache.log4j.BasicConfigurator;
 
+import view.EndPointFrame;
+
 
 public class EndPoint {
 

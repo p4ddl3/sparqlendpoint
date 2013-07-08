@@ -44,6 +44,8 @@ public class SparqlQueryExecutor {
 		params.put(key, value);
 	}
 	public void setValue(String key, String value){
+		if(key.startsWith("$"))
+			key = "\\"+key;
 		queryString = queryString.replaceAll(key, value);
 	}
 	public void expandList(String name, List<String> values, int flag){
