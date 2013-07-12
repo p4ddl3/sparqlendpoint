@@ -25,6 +25,7 @@ public class EndPointLocation extends Observable{
 	private Map<String, String> params;
 	public EndPointLocation(){
 		params = new HashMap<String, String>();
+		params.put("charmax", "1000");
 	}
 	public void setRemote(boolean remote){
 		this.remote = remote;
@@ -76,5 +77,9 @@ public class EndPointLocation extends Observable{
 	}
 	public void setParams(String key, String value){
 		params.put(key,  value);
+	}
+	public int getCharMax(){
+		int charmax =	Integer.parseInt(params.get("charmax"));
+		return charmax;
 	}
 }

@@ -9,6 +9,7 @@ import com.hp.hpl.jena.query.ResultSet;
 import model.AbstractQueryParam;
 import model.AtomicQueryParam;
 import model.EndPointLocation;
+import model.ListedQueryParam;
 import model.QueryParamsList;
 
 import util.Bundle;
@@ -24,21 +25,26 @@ public class QueryExecutor extends Observable{
 		this.location = target;
 		errorMessage = "";
 	}
+	@SuppressWarnings("unchecked")
 	public List<ResultSet> pushQueryAndExec(String query, QueryParamsList params){
 		List<ResultSet> results = new ArrayList<ResultSet>();
 		queries.push(query);
-		queryExec = new SparqlQueryExecutor(location, new SparqlQueryFromString(query), 1000);
+		queryExec = new SparqlQueryExecutor(location, new SparqlQueryFromString(query), 2000);
 		if(params != null){
 			for(AbstractQueryParam param : params.getParams()){
+				System.out.println(param);
 				if(param.getType() == AtomicQueryParam.TYPE){
-					System.out.println("setValue");
 					queryExec.setValue(param.getName(), param.renderValue());
+				}
+				if(param.getType() == ListedQueryParam.TYPE){
+					System.out.println("list");
+					queryExec.expandList(param.getName(), (List<String>)param.getValue(), SparqlQueryExecutor.FLAG_USING_NAMESPACE);
 				}
 			}
 			
 		}
 		System.out.println(params);
-		System.out.println(queryExec.getQueryString());
+		
 		
 		
 		if(location.isRemote()){
@@ -47,6 +53,7 @@ public class QueryExecutor extends Observable{
 			}
 		}
 		results = queryExec.execute();
+		System.out.println(queryExec.getQueryString());
 		if(results == null){
 			errorMessage = queryExec.getErrorMessage();
 			setChanged();

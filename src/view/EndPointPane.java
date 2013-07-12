@@ -19,6 +19,10 @@ import model.QueryParamsList;
 import model.ResultModel;
 import model.ResultViewModel;
 import sparql.QueryExecutor;
+import view.debug.QueryDebugFrame;
+import view.editor.QueryEditorView;
+import view.results.CellTablePopUp;
+import view.results.FilterPanel;
 
 import com.hp.hpl.jena.query.ResultSet;
 

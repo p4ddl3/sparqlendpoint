@@ -1,5 +1,6 @@
 package model;
 
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -11,6 +12,13 @@ public class QueryParamsViewModel extends AbstractTableModel implements Observer
 	private String[] columnNames;
 	public QueryParamsViewModel(){
 		columnNames = new String[]{"Parameter Name", "Parameter type","Parameter value"};
+	}
+	
+	public boolean isCellEditable(int row, int col){
+		if(col == 0 || col == 2){
+			return true;
+		}
+		return false;
 	}
 	@Override
 	public int getRowCount() {
@@ -38,9 +46,28 @@ public class QueryParamsViewModel extends AbstractTableModel implements Observer
 				value = param.getType()+"";
 				break;
 			case 2 :
-				value = param.renderValue();
+				return param.getValue();
 		}
 		return value;
+	}
+	@SuppressWarnings("unchecked")
+	public void setValueAt(Object value, int row, int col){
+		AbstractQueryParam param = model.getParams().get(row);
+		switch(col){
+			case 0:
+				param.setName((String) value);
+				break;
+			case 2:
+				switch(param.getType()){
+					case AtomicQueryParam.TYPE:
+						param.setValue((String) value);
+						break;
+					case ListedQueryParam.TYPE:
+						param.setValue((List<String>) value);
+						break;
+				}
+				break;
+		}
 	}
 	public void refresh(){
 		fireTableDataChanged();
@@ -54,24 +81,6 @@ public class QueryParamsViewModel extends AbstractTableModel implements Observer
 	public void setModel(QueryParamsList model){
 		this.model = model;
 		model.addObserver(this);
-		refresh();
-	}
-	public boolean isCellEditable(int rowIdw, int colIdx){
-		if(colIdx == 0 || colIdx == 2 )
-			return true;
-		else
-			return false;
-	}
-	public void setValueAt(Object value, int rowIndex, int columnIndex){
-		AbstractQueryParam param = model.getParams().get(rowIndex);
-		if(columnIndex == 0){//changement de nom
-			String name = (String) value;
-			param.setName(name);
-		}
-		if(columnIndex == 2){
-			String str = (String) value;
-			param.addValue(str);
-		}
 		refresh();
 	}
 

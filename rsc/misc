@@ -10,4 +10,64 @@ WHERE {
 ?g <http://bio2rdf.org/omim_vocabulary:xref> ?xref . 
 FILTER regex(?xref, "^http://bio2rdf.org/geneid:[0-9]*$")
 }
+
+
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT distinct ?xref 
+WHERE {{
+ ?p rdf:type <http://bio2rdf.org/omim_vocabulary:Phenotype> .
+ ?p <http://bio2rdf.org/omim_vocabulary:preferred-title> ?title .
+ FILTER 	( regex(?title, "$A", "i")).
+?g rdf:type <http://bio2rdf.org/omim_vocabulary:Gene> . 
+?g <http://bio2rdf.org/omim_vocabulary:phenotype> ?p . 
+?g <http://bio2rdf.org/omim_vocabulary:xref> ?xref . 
+FILTER regex(?xref, "^http://bio2rdf.org/geneid:[0-9]*$")
+  
+  }UNION{
+ ?p rdf:type <http://bio2rdf.org/omim_vocabulary:Phenotype> .
+ ?p <http://bio2rdf.org/omim_vocabulary:alternative-title> ?altTitle .
+  FILTER 	( regex(?altTitle, "$A", "i")).
+?g rdf:type <http://bio2rdf.org/omim_vocabulary:Gene> . 
+?g <http://bio2rdf.org/omim_vocabulary:phenotype> ?p . 
+?g <http://bio2rdf.org/omim_vocabulary:xref> ?xref . 
+FILTER regex(?xref, "^http://bio2rdf.org/geneid:[0-9]*$")
+}
+}
+
 http://cu.omim.bio2rdf.org/sparql
+http://cu.gene.bio2rdf.org/sparql
+
+PREFIX gene: <http://bio2rdf.org/geneid:>
+PREFIX rdf-syntax: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX vocabulary: <http://bio2rdf.org/geneid_vocabulary:>
+SELECT DISTINCT ?subject ?predicate ?resource
+	WHERE {
+				?subject ?predicate ?resource .
+				FILTER ( #EXPAND_OR[#PROP_LIST][SEQUABLE=false][?predicate = #VALUE])
+                FILTER ( #EXPAND_OR[#GENE_LIST][SEQUABLE=true][?subject = #VALUE])
+			}
+			
+			
+			
+			
+gene list :
+<http://bio2rdf.org/geneid:2182>
+<http://bio2rdf.org/geneid:8905>
+<http://bio2rdf.org/geneid:1749>
+<http://bio2rdf.org/geneid:5459>
+<http://bio2rdf.org/geneid:9401>
+<http://bio2rdf.org/geneid:5077>
+<http://bio2rdf.org/geneid:374462>
+<http://bio2rdf.org/geneid:4036>
+<http://bio2rdf.org/geneid:23424>
+<http://bio2rdf.org/geneid:641339>
+<http://bio2rdf.org/geneid:282808>
+<http://bio2rdf.org/geneid:125336>
+<http://bio2rdf.org/geneid:2706>
+
+prop list :
+
+<http://bio2rdf.org/geneid_vocabulary:has_symbol>
+<http://bio2rdf.org/geneid_vocabulary:has_map_location>
+<http://bio2rdf.org/geneid_vocabulary:process>

@@ -27,6 +27,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
+import view.results.TabPopup;
+
 import model.AtomicQueryParam;
 import model.EndPointLocation;
 

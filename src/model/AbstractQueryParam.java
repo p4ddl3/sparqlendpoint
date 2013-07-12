@@ -6,16 +6,17 @@ import java.util.List;
 public abstract class AbstractQueryParam {
 	protected String type;
 	protected String name;
-	protected List<String> values;
+	protected Object value;
 	public AbstractQueryParam(String type, String name){
 		this.type = type;
 		this.name = name;
-		values = new ArrayList<String>();
 	}
-	public void addValue(String value){
-		values.add(value);
+	public void setValue(Object obj){
+		value = obj;
 	}
-	
+	public Object getValue(){
+		return value;
+	}
 	public String getType(){
 		return type;
 	}

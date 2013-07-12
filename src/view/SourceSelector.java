@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+
 import model.EndPointLocation;
 
 
@@ -136,7 +137,7 @@ public class SourceSelector extends JFrame implements ActionListener{
 			}
 		}
 		if(event.getSource() == paramsButton){
-			new ParamsFrame(location);
+			new EndpointParamsFrame(location);
 		}
 		
 	}

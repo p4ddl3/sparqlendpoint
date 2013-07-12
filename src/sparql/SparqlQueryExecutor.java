@@ -120,7 +120,7 @@ public class SparqlQueryExecutor {
 		print("terminée (" + ellaps + " ms)");
 		return  results;
 	}
-	private Map<String,Integer> querySplit(){
+	public Map<String,Integer> querySplit(){
 		Map<String,Integer> queries = new HashMap<String,Integer>();
 		Matcher matcher = seqSequence.matcher(queryString);
 		if(queryString.length() < charMax){//petite requete, on supprime les sequables et onn return direct.
