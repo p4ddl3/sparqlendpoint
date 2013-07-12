@@ -1,6 +1,17 @@
 SparqlEndPoint
 ==============
 
+
+MAJ du 12/07/2013
+-----------------
+
+- Nouveau refactoring, hiérarchie du package view.
+- Amélioration du gestionnaire de paramètres (ajout de la gestion des paramètres listés)
+- Amélioration du debugger, pour visualiser le rendu des paramètres listés, ainsi que le découpage de la requête
+
+
+
+
 MAJ du 08/07/2013
 -----------------
 
