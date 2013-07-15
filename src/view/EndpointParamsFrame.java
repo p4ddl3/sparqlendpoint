@@ -13,9 +13,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 
-import model.EndPointLocation;
+import model.EndPointConfig;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
@@ -29,8 +28,8 @@ public class EndpointParamsFrame extends JFrame implements ActionListener{
 	private JPanel bottomPane;
 	private JButton applyButton;
 	
-	private EndPointLocation location;
-	public EndpointParamsFrame(EndPointLocation location){
+	private EndPointConfig location;
+	public EndpointParamsFrame(EndPointConfig location){
 		super("Remote endpoint parameter");
 		this.location = location;
 		contentPane = new JPanel();
@@ -69,43 +68,48 @@ public class EndpointParamsFrame extends JFrame implements ActionListener{
 		paramText.setText(text);
 	}
 	public boolean apply(){
-		String errorMessage = "error";
+		boolean success = true;
+		Map<String, String> tmp = null;
+		String[] lines = null;
+		String errorMessage = "charmax attribute is needed (nb max of caracters per query).\n The value of this parameter needs to be an integer.";
 		if(paramText.getText().equals("")){
 			location.clearParams();
-			return true;
-		}
-		Map<String, String> tmp = new HashMap<String, String>();
-		boolean success = true;
-		Pattern pattern = Pattern.compile("(?<key>.+)=(?<value>.+)");
-		Matcher m;
-		String text = paramText.getText();
-		String[] lines = text.split("\n");
-		for(String line : lines){
-			m = pattern.matcher(line);
-			if(m.matches()){
-				String key = m.group("key");
-				String value = m.group("value");
-				if(tmp.containsKey(key)){
-					success = false;
-					errorMessage = line+"\nkey '"+key+"' already used !!";
-					break;
-				}else{
-					tmp.put(key, value);
+			success = false;
+		}else{
+			tmp = new HashMap<String, String>();
+			
+			Pattern pattern = Pattern.compile("(?<key>.+)=(?<value>.+)");
+			Matcher m;
+			String text = paramText.getText();
+			lines = text.split("\n");
+			for(String line : lines){
+				m = pattern.matcher(line);
+				if(m.matches()){
+					String key = m.group("key");
+					String value = m.group("value");
+					if(tmp.containsKey(key)){
+						success = false;
+						errorMessage = line+"\nkey '"+key+"' already used !!";
+						break;
+					}else{
+						tmp.put(key, value);
+					}
 				}
-			}
-			else{
-				errorMessage = line+"\nisn't correct";
-				success = false;
-				break;
+				else{
+					errorMessage = line+"\nisn't correct";
+					success = false;
+					break;
+				}
 			}
 		}
 		//check charmax
 		if(success){
+			Pattern charPattern = Pattern.compile("charmax=(?<value>[0-9]+)");
+			Matcher matcher;
 			boolean found  = false;
-			if(lines.length == 0)
-				found = false;
 			for(String str : lines ){
-				if(str.equals("charmax")){
+				matcher = charPattern.matcher(str);
+				if(matcher.matches()){
 					found = true;
 					break;
 				}
@@ -113,14 +117,13 @@ public class EndpointParamsFrame extends JFrame implements ActionListener{
 			System.out.println(found);
 			if(!found){
 				success=  false;
-				errorMessage = "charmax attribute is needed (nb max of caracters per query)";
+				
 			}
 		}
 		if(success){
 			location.clearParams();
 			for(String k : tmp.keySet()){
 				location.setParams(k, tmp.get(k));
-				System.out.println("add");
 			}
 		}else{
 			JOptionPane.showMessageDialog(this, errorMessage, "Error", JOptionPane.ERROR_MESSAGE);

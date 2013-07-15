@@ -29,13 +29,13 @@ public class DialogParamList extends JDialog implements ActionListener{
 		contentPane.setLayout(new BorderLayout());
 		area = new RSyntaxTextArea();
 		contentPane.add(new RTextScrollPane(area), BorderLayout.CENTER);
-		area.setPreferredSize(new Dimension(200,200));
 		
 		bottomPane = new JPanel();
 		applyButton = new JButton("apply");
 		applyButton.addActionListener(this);
 		bottomPane.add(applyButton);
 		contentPane.add(bottomPane, BorderLayout.SOUTH);
+		contentPane.setPreferredSize(new Dimension(200,200));
 		init();
 		pack();
 		setModal(true);

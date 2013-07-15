@@ -24,6 +24,8 @@ import javax.swing.text.StyleContext;
 
 import model.AbstractQueryParam;
 import model.AtomicQueryParam;
+import model.EndPointConfig;
+import model.EndPointStore;
 import model.ListedQueryParam;
 import model.QueryParamsList;
 
@@ -54,13 +56,13 @@ public class QueryDebugFrame extends JFrame implements ActionListener{
 		atmf.putMapping("text/sparql", "syntax.SparqlTokenMaker");
 		queryPanel.setSyntaxEditingStyle("text/sparql");
 		queryPanel.setEditable(false);
-		queryPanel.setPreferredSize(new Dimension(400,400));
+		//queryPanel.setPreferredSize(new Dimension(400,400));
 		RTextScrollPane queryPanelScroll = new RTextScrollPane(queryPanel);
 		
 		queryPanelScroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		queryPanelScroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		contentPane.add(queryPanelScroll, BorderLayout.CENTER);
-		
+		contentPane.setPreferredSize(new Dimension(400,400));
 		
 		bottomPane = new JPanel();
 		refreshButton = new JButton("refresh");
@@ -75,7 +77,9 @@ public class QueryDebugFrame extends JFrame implements ActionListener{
 	public void init(){
 		String query = parent.getEditor().getQuery();
 		QueryParamsList list = parent.getEditor().getParamList();
-		SparqlQueryExecutor executor = new SparqlQueryExecutor(parent.getEndPointLocation(), new SparqlQueryFromString(query), 1000);
+		EndPointConfig config = EndPointStore.get().getSelectedConfig();
+		int charMax = config.getCharMax();
+		SparqlQueryExecutor executor = new SparqlQueryExecutor(config, new SparqlQueryFromString(query));
 		if(list != null){
 			for(AbstractQueryParam param : list.getParams()){
 				if(param.getType() == AtomicQueryParam.TYPE){
@@ -95,7 +99,7 @@ public class QueryDebugFrame extends JFrame implements ActionListener{
 			text +="Query has been splitted into "+queries.size()+" sub-queries\n\n";
 			int part = 0;
 			for(String str : queries.keySet()){
-				text += "\n\nsub query "+(part++)+" :\n";
+				text += "\n\nsub query "+(++part)+"/"+queries.size()+" ("+str.length()+"/"+charMax+" characters )\n";
 				text += str;
 			}
 		}

@@ -2,7 +2,6 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
-import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -27,10 +26,9 @@ import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
+import model.EndPointConfig;
+import model.EndPointStore;
 import view.results.TabPopup;
-
-import model.AtomicQueryParam;
-import model.EndPointLocation;
 
 public class EndPointFrame extends JFrame implements ActionListener, Observer, MouseListener{
 	private static final long serialVersionUID = 1L;
@@ -47,17 +45,18 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 	private JMenuItem itemAddTab;
 	private JMenuItem itemDelTab;
 	
-	private EndPointLocation endPointLocation;
+	private EndPointConfig endPointLocation;
 	private List<EndPointPane> panes;
 	public EndPointFrame() {
 		super("EndPoint Client");
 		
-		endPointLocation = new EndPointLocation();
+		EndPointStore.get();
+		endPointLocation = new EndPointConfig();
 		
 		menuBar = new JMenuBar();
 		menuEndPoint = new JMenu("EndPoint");
 		
-		itemSelectEndPoint = new JMenuItem("Select EndPoint location");
+		itemSelectEndPoint = new JMenuItem("Configure endpoint");
 		itemSelectEndPoint.addActionListener(this);
 		menuEndPoint.add(itemSelectEndPoint);
 		
@@ -88,7 +87,7 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		if(event.getSource() == itemSelectEndPoint){
-			SourceSelector selector = new SourceSelector(endPointLocation);
+			EndpointConfigurationFrame selector = new EndpointConfigurationFrame(this);
 			selector.setVisible(true);
 		}
 		if(event.getSource() == itemAddTab){
@@ -121,10 +120,10 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 		}
 		
 	}
-	public EndPointLocation getEndPointLocation(){
+	public EndPointConfig getEndPointLocation(){
 		return endPointLocation;
 	}
-	public void setEndPointLocation(EndPointLocation target){
+	public void setEndPointLocation(EndPointConfig target){
 		endPointLocation = target;
 	}
 
@@ -220,26 +219,18 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 

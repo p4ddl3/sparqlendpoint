@@ -1,6 +1,7 @@
 package sparql;
 
 
+import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import model.EndPointLocation;
+import model.EndPointConfig;
 
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryFactory;
@@ -21,7 +22,7 @@ public class SparqlQueryExecutor {
 	
 	private String queryString;
 	private String queryName;
-	private EndPointLocation location;
+	private EndPointConfig location;
 	private String errorMessage;
 	private Map<String,String> params;
 	private List<AbstractQueryExecution> engines;
@@ -30,9 +31,10 @@ public class SparqlQueryExecutor {
 	private Pattern seqSequence = Pattern.compile("#SEQUABLE\\[(?<sequence>.*?)\\]");
 	
 	
-	public SparqlQueryExecutor(EndPointLocation location, SparqlQueryProvider provider, int charMax) {
+	public SparqlQueryExecutor(EndPointConfig location, SparqlQueryProvider provider) {
 		engines = new ArrayList<AbstractQueryExecution>();
-		this.charMax = charMax;
+		this.charMax = location.getCharMax();
+		System.out.println("charmax="+charMax);
 		this.location = location;
 		queryName = "query";
 		queryString = provider.getQuery();
@@ -108,6 +110,7 @@ public class SparqlQueryExecutor {
 			checker.run();
 			checker.interrupt();*/
 			ResultSet set = qexec.getQuery().execSelect();
+			System.out.println("set :" + set);
 			engines.add(qexec);
 			results.add(set);
 			//qexec.close();

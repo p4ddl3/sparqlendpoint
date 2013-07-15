@@ -8,7 +8,8 @@ import com.hp.hpl.jena.query.ResultSet;
 
 import model.AbstractQueryParam;
 import model.AtomicQueryParam;
-import model.EndPointLocation;
+import model.EndPointConfig;
+import model.EndPointStore;
 import model.ListedQueryParam;
 import model.QueryParamsList;
 
@@ -17,19 +18,17 @@ import util.Bundle;
 
 public class QueryExecutor extends Observable{
 	private Stack<String> queries;
-	private EndPointLocation location;
 	private SparqlQueryExecutor queryExec;
 	private String errorMessage;
-	public QueryExecutor(EndPointLocation target){
+	public QueryExecutor(){
 		queries = new Stack<String>();
-		this.location = target;
 		errorMessage = "";
 	}
 	@SuppressWarnings("unchecked")
 	public List<ResultSet> pushQueryAndExec(String query, QueryParamsList params){
 		List<ResultSet> results = new ArrayList<ResultSet>();
 		queries.push(query);
-		queryExec = new SparqlQueryExecutor(location, new SparqlQueryFromString(query), 2000);
+		queryExec = new SparqlQueryExecutor(EndPointStore.get().getSelectedConfig(), new SparqlQueryFromString(query));
 		if(params != null){
 			for(AbstractQueryParam param : params.getParams()){
 				System.out.println(param);
@@ -45,11 +44,11 @@ public class QueryExecutor extends Observable{
 		}
 		System.out.println(params);
 		
+		EndPointConfig config  = EndPointStore.get().getSelectedConfig();
 		
-		
-		if(location.isRemote()){
-			for(String key : location.getParams().keySet()){
-				queryExec.addParam(key, location.getParams().get(key));
+		if(config.isRemote()){
+			for(String key : config.getParams().keySet()){
+				queryExec.addParam(key, config.getParams().get(key));
 			}
 		}
 		results = queryExec.execute();

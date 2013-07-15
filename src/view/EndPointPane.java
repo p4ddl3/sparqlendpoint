@@ -13,8 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTable;
+import javax.xml.ws.Endpoint;
 
-import model.EndPointLocation;
+import model.EndPointConfig;
+import model.EndPointStore;
 import model.QueryParamsList;
 import model.ResultModel;
 import model.ResultViewModel;
@@ -42,16 +44,14 @@ public class EndPointPane extends JPanel implements Observer, ActionListener, Mo
 	
 	private QueryExecutor executor;
 	private ResultModel resultModel;
-	private EndPointLocation location;
 	private String name;
 	
 	public EndPointPane(EndPointFrame parent, String name) {
+		EndPointStore.get().addObserver(this);
 		this.parent = parent;
 		this.name = name;
 		resultModel = new ResultModel();
-		location = this.parent.getEndPointLocation();
-		location.addObserver(this);
-		executor = new QueryExecutor(location);
+		executor = new QueryExecutor();
 		executor.addObserver(this);
 		this.setLayout(new BorderLayout());
 		
@@ -140,9 +140,6 @@ public class EndPointPane extends JPanel implements Observer, ActionListener, Mo
 	}
 	public ResultModel getResultModel(){
 		return resultModel;
-	}
-	public EndPointLocation getEndPointLocation(){
-		return location;
 	}
 	public QueryEditorView getEditor(){
 		return queryEditor;

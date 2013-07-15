@@ -6,6 +6,9 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import model.EndPointConfig;
+import model.EndPointStore;
+
 import org.fife.ui.rsyntaxtextarea.AbstractTokenMakerFactory;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.TokenMakerFactory;
@@ -18,13 +21,11 @@ public class SparqlEditorPanel extends JPanel{
 	
 	private RSyntaxTextArea queryPane;
 	private JPanel bottomPane;
-	private EndPointPane parent;
 	private JButton executeButton;
 	private JButton showQueryButton;
 	
 	public SparqlEditorPanel(EndPointPane parent){
 		setLayout(new BorderLayout());
-		this.parent = parent;
 		queryPane = new RSyntaxTextArea();
 		AbstractTokenMakerFactory atmf = (AbstractTokenMakerFactory)TokenMakerFactory.getDefaultInstance();
 		atmf.putMapping("text/sparql", "syntax.SparqlTokenMaker");
@@ -55,7 +56,8 @@ public class SparqlEditorPanel extends JPanel{
 		return queryPane.getText();
 	}
 	public void refresh(){
-		if(parent.getEndPointLocation().isLoaded()){
+		EndPointConfig config = EndPointStore.get().getSelectedConfig();
+		if(config != null && config.isLoaded()){
 			executeButton.setEnabled(true);
 		}else
 			executeButton.setEnabled(false);

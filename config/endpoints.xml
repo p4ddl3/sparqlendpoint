@@ -1,0 +1,1 @@
+<configs><config name="OMIM" url="http://cu.omim.bio2rdf.org/sparql" remote="true"><param key="charmax" value="2000" /></config><config name="NCBI" url="http://cu.gene.bio2rdf.org/sparql" remote="true"><param key="charmax" value="1000" /></config></configs>
