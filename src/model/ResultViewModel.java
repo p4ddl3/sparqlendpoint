@@ -51,7 +51,7 @@ public class ResultViewModel extends AbstractTableModel implements Observer{
 	}
 	public void refresh(){
 		data = new ArrayList<String[]>();
-		if(model.getResults() != null && model.getResults().size() >= 1){
+		if(model.getResults() != null){
 			list = model.getResults();
 			columnNames = model.getColumnNames();
 			int nbCol = model.getColumnNames().length;

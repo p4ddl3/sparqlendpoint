@@ -48,7 +48,7 @@ public class EndpointConfigurationFrame extends JDialog implements ItemListener,
 	private JTextField urlField;
 	private JCheckBox remoteCheckBox;
 	private RSyntaxTextArea paramsArea;
-	
+	private RSyntaxTextArea prefixArea;
 	
 	//bottom
 	private JPanel bottomPane;
@@ -94,6 +94,10 @@ public class EndpointConfigurationFrame extends JDialog implements ItemListener,
 		RTextScrollPane scroll = new RTextScrollPane(paramsArea);
 		scroll.setPreferredSize(new Dimension(150,200));
 		
+		prefixArea = new RSyntaxTextArea();
+		prefixArea.setSyntaxEditingStyle("text/sparql");
+		RTextScrollPane scrollPrefix = new RTextScrollPane(prefixArea);
+		scrollPrefix.setPreferredSize(new Dimension(150,200));
 		
 		bottomPane = new JPanel();
 		
@@ -140,7 +144,11 @@ public class EndpointConfigurationFrame extends JDialog implements ItemListener,
 		previewPanel.add(new JLabel("params :"), c);
 		c.gridx = 2;
 		previewPanel.add(scroll, c);
-		
+		c.gridy = 4;
+		c.gridx = 0;
+		previewPanel.add(new JLabel("prefixes : "), c);
+		c.gridx = 2;
+		previewPanel.add(scrollPrefix, c);
 		previewPanel.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		selectionPanel.add(previewPanel, BorderLayout.CENTER);
 		contentPane.add(selectionPanel, BorderLayout.CENTER);
@@ -179,6 +187,11 @@ public class EndpointConfigurationFrame extends JDialog implements ItemListener,
 			for(Entry< String, String> entry : params.entrySet())
 				text += entry.getKey()+"="+entry.getValue()+"\n";
 			paramsArea.setText(text);
+			
+			String textPrefix = "";
+			for(String prefix : config.getPrefixes())
+				textPrefix += prefix+"\n";
+			prefixArea.setText(textPrefix);
 		}else{
 			nameField.setText("");
 			urlField.setText("");
@@ -196,6 +209,7 @@ public class EndpointConfigurationFrame extends JDialog implements ItemListener,
 			urlField.setEnabled(true);
 			remoteCheckBox.setEnabled(true);
 			paramsArea.setEnabled(true);
+			prefixArea.setEnabled(true);
 		}else{
 			editButton.setEnabled(true);
 			applyButton.setEnabled(true);
@@ -207,6 +221,7 @@ public class EndpointConfigurationFrame extends JDialog implements ItemListener,
 			urlField.setEnabled(false);
 			remoteCheckBox.setEnabled(false);
 			paramsArea.setEnabled(false);
+			prefixArea.setEnabled(false);
 		}
 		
 	}
@@ -331,6 +346,10 @@ public class EndpointConfigurationFrame extends JDialog implements ItemListener,
 			k = matcher.group("key");
 			v = matcher.group("value");
 			config.setParams(k, v);
+		}
+		for(String str : prefixArea.getText().split("\n")){
+			if(!str.matches("\\s*"))
+				config.addPrefix(str);
 		}
 		EndPointStore.get().put(config);
 		refreshComboBox();

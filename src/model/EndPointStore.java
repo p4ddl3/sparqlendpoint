@@ -47,6 +47,9 @@ public class EndPointStore extends Observable{
 				for (Element paramElem : configElem.getChildren("param")){
 					config.setParams(paramElem.getAttributeValue("key"), paramElem.getAttributeValue("value"));
 				}
+				for (Element prefixElem : configElem.getChildren("prefix")){
+					config.addPrefix(prefixElem.getAttributeValue("prefix"));
+				}
 				configs.add(config);
 			}
 		}catch(IOException | JDOMException ioe){
@@ -68,6 +71,11 @@ public class EndPointStore extends Observable{
 					paramElem.setAttribute("value", config.getParams().get(key));
 					
 					configElem.addContent(paramElem);
+				}
+				for(String prefix : config.getPrefixes()){
+					Element prefixElem = new Element("prefix");
+					prefixElem.setAttribute("prefix", prefix);					
+					configElem.addContent(prefixElem);
 				}
 				root.addContent(configElem);
 			}
@@ -100,7 +108,7 @@ public class EndPointStore extends Observable{
 		selected = name;
 		getSelectedConfig().load();
 		setChanged();
-		notifyObservers();
+		notifyObservers("endpointstore.update.selection");
 	}
 	public String getSelectedName(){
 		return selected;

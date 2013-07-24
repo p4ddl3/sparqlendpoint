@@ -23,6 +23,7 @@ public class TabPopup extends JPopupMenu implements ActionListener{
 		this.frame = frame;
 		deleteItem = new JMenuItem("delete tab");
 		deleteItem.addActionListener(this);
+		deleteItem.setActionCommand("tab.popup.delete");
 		titleItem = new JMenuItem(tabName);
 		titleItem.setEnabled(false);
 		ResultViewModel model = frame.getPaneByName(tabName).getViewModel();
@@ -35,7 +36,7 @@ public class TabPopup extends JPopupMenu implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		if(event.getSource() == deleteItem){
+		if(event.getActionCommand().equals("tab.popup.delete")){
 			frame.removePane(name);
 			return;
 		}

@@ -9,8 +9,10 @@ public class AbstractQueryExecution {
 		this.qe = qe;
 	}
 	public void addParam(String key, String value){
-		if(qe instanceof QueryEngineHTTP)
+		if(qe instanceof QueryEngineHTTP){
 			((QueryEngineHTTP) qe).addParam(key, value);
+			System.out.println("param added");
+		}
 		else
 			System.err.println("adding param on local model isn't supported.");
 	}

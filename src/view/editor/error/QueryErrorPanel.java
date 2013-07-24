@@ -12,8 +12,6 @@ import model.ResultModel;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rtextarea.RTextScrollPane;
 
-import util.Bundle;
-
 public class QueryErrorPanel extends JPanel implements Observer{
 	private static final long serialVersionUID = 1L;
 	private ResultModel model;

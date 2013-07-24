@@ -5,12 +5,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Observable;
 
 import sparql.AbstractQueryExecution;
-import util.Bundle;
 
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -24,9 +25,17 @@ public class EndPointConfig extends Observable{
 	private Model localModel;
 	private Map<String, String> params;
 	private String name;
+	private List<String> prefixes;
 	public EndPointConfig(){
+		prefixes = new ArrayList<String>();
 		params = new HashMap<String, String>();
 		params.put("charmax", "1000");
+	}
+	public List<String> getPrefixes(){
+		return prefixes;
+	}
+	public void addPrefix(String prefix){
+		prefixes.add(prefix);
 	}
 	public void setRemote(boolean remote){
 		this.remote = remote;
@@ -56,7 +65,7 @@ public class EndPointConfig extends Observable{
 		}
 		loaded = true;
 		setChanged();
-		notifyObservers(new Bundle("endpointlocation"));
+		notifyObservers("endpointConfig.location.loaded");
 	}
 	public boolean isLoaded(){
 		return loaded;

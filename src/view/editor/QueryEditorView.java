@@ -19,7 +19,7 @@ import view.editor.query.SparqlEditorPanel;
 
 import model.QueryParamsList;
 
-public class QueryEditorView extends JPanel implements Observer, ActionListener{
+public class QueryEditorView extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 	private SparqlEditorPanel editorPanel;
@@ -53,11 +53,7 @@ public class QueryEditorView extends JPanel implements Observer, ActionListener{
 		setPreferredSize(new Dimension(200,200));
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

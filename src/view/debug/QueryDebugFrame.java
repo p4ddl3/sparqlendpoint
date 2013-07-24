@@ -79,7 +79,7 @@ public class QueryDebugFrame extends JFrame implements ActionListener{
 		QueryParamsList list = parent.getEditor().getParamList();
 		EndPointConfig config = EndPointStore.get().getSelectedConfig();
 		int charMax = config.getCharMax();
-		SparqlQueryExecutor executor = new SparqlQueryExecutor(config, new SparqlQueryFromString(query));
+		SparqlQueryExecutor executor = new SparqlQueryExecutor(config, new SparqlQueryFromString(query), null);
 		if(list != null){
 			for(AbstractQueryParam param : list.getParams()){
 				if(param.getType() == AtomicQueryParam.TYPE){

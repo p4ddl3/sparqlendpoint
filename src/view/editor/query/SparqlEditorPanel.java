@@ -2,6 +2,7 @@ package view.editor.query;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -59,6 +60,18 @@ public class SparqlEditorPanel extends JPanel{
 		EndPointConfig config = EndPointStore.get().getSelectedConfig();
 		if(config != null && config.isLoaded()){
 			executeButton.setEnabled(true);
+			String[] oldTextArray = queryPane.getText().split("\n");
+			String oldText = "";
+			for(int i = 0; i < oldTextArray.length; i++){
+				if(!config.getPrefixes().contains(oldTextArray[i]) && !oldTextArray[i].isEmpty())
+					oldText += oldTextArray[i]+"\n";
+			}
+			queryPane.setText("");
+			String textPrefix = "";
+				for(String str : config.getPrefixes())
+					textPrefix += str+"\n";
+			oldText = textPrefix +"\n"+oldText;
+			queryPane.setText(oldText);
 		}else
 			executeButton.setEnabled(false);
 	}

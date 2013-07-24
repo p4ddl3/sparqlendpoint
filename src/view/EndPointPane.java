@@ -86,13 +86,7 @@ public class EndPointPane extends JPanel implements Observer, ActionListener, Mo
 		if(event.getActionCommand().equals("editor.query.execute")){
 			String query = queryEditor.getQuery();
 			QueryParamsList params = queryEditor.getParamList();
-			List<ResultSet> results =executor.pushQueryAndExec(query, params);
-			if(results != null){
-				resultModel.setResults(results);
-			}else{
-				resultModel.setErrorMessage(executor.getErrorMessage());
-				queryEditor.setSelectedView("Errors");
-			}
+			executor.pushQueryAndExec(query, params);
 			return; 
 		}
 		if(event.getActionCommand().equals("editor.query.show")){
@@ -104,8 +98,19 @@ public class EndPointPane extends JPanel implements Observer, ActionListener, Mo
 
 
 	@Override
-	public void update(Observable arg0, Object arg1) {
+	public void update(Observable arg0, Object action) {
 		queryEditor.refresh();
+		if(action != null){
+			if(action.equals("queryExecutor.result.success")){
+				resultModel.setResults(executor.getResults());
+				return;
+			}
+			if(action.equals("queryExecutor.result.error")){
+				resultModel.setErrorMessage(executor.getErrorMessage());
+				queryEditor.setSelectedView("Errors");
+				return;
+			}
+		}
 	}
 	public String getName(){
 		return this.name;
@@ -127,7 +132,7 @@ public class EndPointPane extends JPanel implements Observer, ActionListener, Mo
 	}
 	public void setQueryAndRun(String query){
 		queryEditor.setQuery(query);
-		resultModel.setResults(executor.pushQueryAndExec(query, null));
+		executor.pushQueryAndExec(query, null);
 	}
 	public void showPanel(boolean aFlag){
 		if(aFlag)

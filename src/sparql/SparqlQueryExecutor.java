@@ -1,22 +1,31 @@
 package sparql;
 
 
-import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletionService;
+import java.util.concurrent.ExecutorCompletionService;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.swing.SwingWorker;
+
 import model.EndPointConfig;
+
+
 
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.query.Syntax;
+import com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP;
 
-public class SparqlQueryExecutor {
+public class SparqlQueryExecutor extends SwingWorker<List<ResultSet>, Integer>{
 	public static final int FLAG_LITERAL = 0;
 	public static final int FLAG_USING_NAMESPACE = 1;
 	
@@ -29,9 +38,10 @@ public class SparqlQueryExecutor {
 	private int charMax;
 	private Pattern listPattern = Pattern.compile("#EXPAND_OR\\[#(?<name>.*?)\\]\\[SEQUABLE=(?<sequable>.*?)\\]\\[(?<constant>.*?) = (?<value>#VALUE)\\]");
 	private Pattern seqSequence = Pattern.compile("#SEQUABLE\\[(?<sequence>.*?)\\]");
+	private List<ResultSet> results;
+	private SparqlQueryResultListener callback;
 	
-	
-	public SparqlQueryExecutor(EndPointConfig location, SparqlQueryProvider provider) {
+	public SparqlQueryExecutor(EndPointConfig location, SparqlQueryProvider provider, SparqlQueryResultListener callback) {
 		engines = new ArrayList<AbstractQueryExecution>();
 		this.charMax = location.getCharMax();
 		System.out.println("charmax="+charMax);
@@ -40,6 +50,7 @@ public class SparqlQueryExecutor {
 		queryString = provider.getQuery();
 		params = new HashMap<String,String>();
 		errorMessage = "";
+		this.callback = callback;
 	}
 	
 	public void addParam(String key, String value){
@@ -80,48 +91,6 @@ public class SparqlQueryExecutor {
 			}else{
 				System.err.println(name + " not found.");
 			}
-	}
-	public List<ResultSet> execute(){
-		long globalTime = System.currentTimeMillis();
-		long ellaps;
-		Map<String,Integer> map = querySplit();
-		List<String> queries = new ArrayList<String>();
-		for(String str : map.keySet())
-			queries.add(str);
-		List<ResultSet> results = new ArrayList<ResultSet>();
-		long localTime;
-		long localTime2;
-		for(int i =0; i < queries.size(); i++){
-			print("part("+(i+1)+"/"+queries.size()+") : envoi de "+((map.get(queries.get(i))!=-1)?map.get(queries.get(i))+ " references...": "la requete..."));
-			localTime = System.currentTimeMillis();
-			//System.out.println(queries.get(i));
-			try{
-			QueryFactory.parse(new Query(), queries.get(i), "", Syntax.syntaxSPARQL_11);
-			}catch(Exception qpe){
-				errorMessage = qpe.getMessage();
-				return null;
-			}
-			Query query = QueryFactory.create(queries.get(i));
-			AbstractQueryExecution	qexec =location.getAbstractQueryExecution(query);
-			for(String str : params.keySet()){
-				qexec.addParam(str, params.get(str));
-			}
-			/*TimeOutChecker checker = new TimeOutChecker();
-			checker.run();
-			checker.interrupt();*/
-			ResultSet set = qexec.getQuery().execSelect();
-			System.out.println("set :" + set);
-			engines.add(qexec);
-			results.add(set);
-			//qexec.close();
-			localTime2 = System.currentTimeMillis();
-			ellaps = localTime2-localTime;
-			print("part("+(i+1)+"/"+queries.size()+") : terminée (" + ellaps + " ms)");
-		}
-		long globalTime2 = System.currentTimeMillis();
-		ellaps = globalTime2-globalTime;
-		print("terminée (" + ellaps + " ms)");
-		return  results;
 	}
 	public Map<String,Integer> querySplit(){
 		Map<String,Integer> queries = new HashMap<String,Integer>();
@@ -189,6 +158,75 @@ public class SparqlQueryExecutor {
 	}
 	public String getErrorMessage(){
 		return errorMessage;
+	}
+
+	@Override
+	protected List<ResultSet> doInBackground() throws Exception {
+		long globalTime = System.currentTimeMillis(), ellaps;
+		Map<String,Integer> map = querySplit();
+		List<String> queries = new ArrayList<String>();
+		for(String str : map.keySet())
+			queries.add(str);
+		for(int i =0; i < queries.size(); i++){
+			try{
+			QueryFactory.parse(new Query(), queries.get(i), "", Syntax.syntaxSPARQL_11);
+			}catch(Exception qpe){
+				errorMessage = qpe.getMessage();
+				results = null;
+			}
+			Query query = QueryFactory.create(queries.get(i));
+			AbstractQueryExecution	qexec =location.getAbstractQueryExecution(query);
+			for(String str : params.keySet()){
+				qexec.addParam(str, params.get(str));
+			}
+			engines.add(qexec);
+			
+		}
+		results = executeInParallel(engines);
+		long globalTime2 = System.currentTimeMillis();
+		ellaps = globalTime2-globalTime;
+		print("terminée (" + ellaps + " ms)");
+		return results;
+	}
+	protected void done(){
+		if(callback != null)
+			callback.onSparqlQueryResult(results);
+	}
+	public List<ResultSet> executeInParallel(List<AbstractQueryExecution> engines){
+		List<ResultSet> sets = null;
+		long globalTime = System.currentTimeMillis(), ellaps;
+		List<QueryRunner> runners = new ArrayList<QueryRunner>();
+		for(int i = 0; i < engines.size(); i++){
+			runners.add(new QueryRunner(engines.get(i), i, engines.size()));
+		}
+		
+		ExecutorService executor = Executors.newFixedThreadPool(20);
+		try {
+			sets = resolve(executor, runners);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		executor.shutdown();
+		long globalTime2 = System.currentTimeMillis();
+		ellaps = globalTime2-globalTime;
+		return sets;
+	}
+	public List<ResultSet> resolve(ExecutorService executor, List<QueryRunner> runners) throws Exception{
+		CompletionService<ResultSet> completionService = new ExecutorCompletionService<ResultSet>(executor);
+		List<Future<ResultSet>> futures = new ArrayList<Future<ResultSet>>();
+		List<ResultSet> list = new ArrayList<ResultSet>();
+		for(QueryRunner runner : runners)
+			futures.add(completionService.submit(runner));
+		
+		ResultSet set = null;
+		for(int i =0; i < runners.size(); i++){
+			set = completionService.take().get();
+			setProgress((int)(i*100)/runners.size());
+			if(set != null)
+				list.add(set);
+		}
+		return list;
 	}
 
 }

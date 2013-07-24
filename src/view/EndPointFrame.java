@@ -26,6 +26,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
+import org.openjena.atlas.iterator.ActionCount;
+
 import model.EndPointConfig;
 import model.EndPointStore;
 import view.results.TabPopup;
@@ -80,7 +82,10 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 		setContentPane(contentPane);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		EndPointStore.get().addObserver(this);
 		setup();
+		StatusBar.get().attachTo(this);
+		StatusBar.get().out("Ready.");
 		pack();
 	}
 
@@ -91,12 +96,7 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 			selector.setVisible(true);
 		}
 		if(event.getSource() == itemAddTab){
-			String s = (String)JOptionPane.showInputDialog(this,
-					"Enter the tab name to add..."
-					);
-			if(s!= null && !s.isEmpty())
-				addPane(s);
-			return;
+			createPane();
 		}
 		if(event.getSource() == itemDelTab){
 			if(panes.size() == 0)
@@ -120,6 +120,15 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 		}
 		
 	}
+	public void createPane(){
+		String s = (String)JOptionPane.showInputDialog(this,
+				"Enter the tab name to add...",
+				"tab"+(panes.size()+1)
+				);
+		if(s!= null && !s.isEmpty())
+			addPane(s);
+		return;
+	}
 	public EndPointConfig getEndPointLocation(){
 		return endPointLocation;
 	}
@@ -128,8 +137,14 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 	}
 
 	@Override
-	public void update(Observable o, Object arg) {
-
+	public void update(Observable o, Object action) {
+		if(action == null)
+			return;
+		if(action.equals("endpointstore.update.selection")){
+			setTitle(EndPointStore.get().getSelectedName()+" Client");
+			return;
+		}
+			
 		
 	}
 	public EndPointPane addPane(String name){
@@ -177,9 +192,10 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 	
 	public  void setup(){
 		actionMap = new HashMap<KeyStroke, Action>();
-		KeyStroke ctrlF = KeyStroke.getKeyStroke(KeyEvent.VK_F, KeyEvent.CTRL_DOWN_MASK);
-		actionMap.put(ctrlF, new AbstractAction("search"){
-
+		KeyStroke ctrl_F = KeyStroke.getKeyStroke(KeyEvent.VK_F, KeyEvent.CTRL_DOWN_MASK);
+		KeyStroke ctrl_N = KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK);
+		KeyStroke escape = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
+		actionMap.put(ctrl_F, new AbstractAction("search"){
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -190,6 +206,27 @@ public class EndPointFrame extends JFrame implements ActionListener, Observer, M
 				
 			}
 			
+		});
+		actionMap.put(ctrl_N, new AbstractAction("main.pane.add"){
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				createPane();
+				
+			}
+			
+		});
+		actionMap.put(escape, new AbstractAction("main.search.dismiss") {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int index = tabbedPane.getSelectedIndex();
+				EndPointPane pane = panes.get(index);
+				pane.showPanel(false);
+				
+			}
 		});
 		KeyboardFocusManager kfm = KeyboardFocusManager.getCurrentKeyboardFocusManager();
 		kfm.addKeyEventDispatcher(new KeyEventDispatcher(){

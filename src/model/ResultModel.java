@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
-import util.Bundle;
-
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 
@@ -29,7 +27,7 @@ public class ResultModel extends Observable{
 		}
 		errorMessage = null;
 		setChanged();
-		notifyObservers(new Bundle("resultModel").put("action", "updated"));
+		notifyObservers("resultModel.updated");
 	}
 	public List<QuerySolution> getResults(){
 		return results;
@@ -40,7 +38,7 @@ public class ResultModel extends Observable{
 	public void setErrorMessage(String errorMessage){
 		this.errorMessage = errorMessage;
 		setChanged();
-		notifyObservers(new Bundle("resultModel").put("action", "error"));
+		notifyObservers("resultModel.error");
 	}
 	public String getErrorMessage(){
 		return errorMessage;
